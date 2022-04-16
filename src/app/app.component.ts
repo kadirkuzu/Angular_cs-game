@@ -11,6 +11,7 @@ export class AppComponent {
   title = 'AngularProject';
   loading = true
   filterText=""
+  giris=false
   search(){
     this.urunService.urunAra(this.filterText)
 

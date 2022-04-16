@@ -14,6 +14,8 @@ import {DataTablesModule} from "angular-datatables";
 import {UrunservisService} from "./services/urunservis.service";
 import { SatinAlimComponent } from './pages/satin-alim/satin-alim.component';
 import { UrunEkleComponent } from './pages/urun-ekle/urun-ekle.component';
+import { LoginComponent } from './pages/login/login.component';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { UrunEkleComponent } from './pages/urun-ekle/urun-ekle.component';
     AnaSayfaComponent,
     SatinAlimComponent,
     UrunEkleComponent,
+    LoginComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,

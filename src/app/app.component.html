@@ -1,0 +1,55 @@
+
+<header class="site-header sticky-top py-1">
+  <nav class="container d-flex flex-column flex-md-row justify-content-between">
+    <h2 style="color: white ; margin-left: -250px">CsGame</h2>
+    <a class="py-2" routerLink="anasayfa" >
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto" role="img" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
+    </a>
+    <a class="py-2 d-none d-md-inline-block" routerLink="anasayfa" style="text-decoration: auto">Ana Sayfa</a>
+    <a class="py-2 d-none d-md-inline-block" routerLink="urunler" (click)="urunService.kategorifilter('TÜMÜ');"style="text-decoration: auto">Ürünler</a>
+    <a class="py-2 d-none d-md-inline-block" routerLink="urunekle" style="text-decoration: auto">Ürün ekle</a>
+    <a class="py-2 d-none d-md-inline-block nav-link dropdown-toggle"id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+       aria-expanded="false" style="text-decoration: auto">Kategoriler</a>
+    <!--<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <li>
+      <li><a class="dropdown-item" href="#">BIÇAKLAR</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="#">Kelebek</a></li>
+      <li><a class="dropdown-item" href="#">Karambit</a></li>
+      <li><a class="dropdown-item" href="#">Avcı Bıçağı</a></li>
+      <li><a class="dropdown-item" href="#">Talon Bıçağı</a></li>
+      <li><a class="dropdown-item" href="#">Bayonet</a></li>
+      <li><a class="dropdown-item" href="#">M9 Bayonet</a></li>
+      <li><a class="dropdown-item" href="#">Pala bıçağı</a></li>
+      <li><a class="dropdown-item" href="#">Sustalı Bıçak</a></li>
+      <li><a class="dropdown-item" href="#"></a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="#">TÜFEKLER</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" routerLink="/urunler/awp">Awp</a></li>
+      <li><a class="dropdown-item" href="#">Ak-47</a></li>
+      <li><a class="dropdown-item" href="#">M4a4</a></li>
+      <li><a class="dropdown-item" href="#">M4a1-S</a></li>
+      <li><a class="dropdown-item" href="#">Galil</a></li>
+      <li><a class="dropdown-item" href="#">Famas</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="#">TABANCALAR</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="#">Desert Eagle</a></li>
+      <li><a class="dropdown-item" href="#">Glock-18</a></li>
+      <li><a class="dropdown-item" href="#">Usp-S</a></li>
+      <li><a class="dropdown-item" href="#">P2000</a></li>
+      <li><a class="dropdown-item" href="#">Five Seven</a></li>
+      <li><a class="dropdown-item" href="#">Tec-9</a></li>
+    </ul> -->
+    <a style="margin-right: -120px;text-decoration: auto" class="py-0 d-none d-md-inline-block end-0"><input style="height: 40px" autocomplete="off" [(ngModel)]="filterText"  id="aranacakUrun" class="form-control me-2" type="search" placeholder="Aradığınız ürünü yazın" aria-label="Search"></a>
+    <a style="margin-right: -280px;text-decoration: auto" class="py-0 d-none d-md-inline-block"><button  (click)="search();filterText='';" class="btn btn-outline-success" type="submit">Ara</button></a>
+
+
+  </nav>
+</header>
+
+
+<router-outlet *ngIf="!loading"></router-outlet>
+
+

@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div style="background-color: rgb(220,220,220)" class="container-fluid">
+    <a class="navbar-brand" href="#">CsGame</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a routerLink="anasayfa" [class.active]="aktifBaslik==='Ana Sayfa'" (click)="aktifBaslik='anasayfa';"
+             class="nav-link active" aria-current="page" href="#">Ana Sayfa</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="urunler/urunekle" [class.active]="aktifBaslik==='Ürün Ekle'" (click)="aktifBaslik='Ürün Ekle';"
+             class="nav-link" href="#">Ürün Ekle</a>
+        </li>
+        <li class="nav-item">
+          <a [class.active]="aktifBaslik==='Tüm Silahlar'"
+             routerLink="urunler"
+             (click)="aktifBaslik='Tüm Silahlar';urunService.kategorifilter('TÜMÜ');"
+             class="nav-link" href="#">Tüm silahlar</a>
+        </li>
+        <li [class.active]="aktifBaslik==='Kategoriler' "   class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+             aria-expanded="false">
+            Kategoriler
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">BIÇAKLAR</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Kelebek</a></li>
+            <li><a class="dropdown-item" href="#">Karambit</a></li>
+            <li><a class="dropdown-item" href="#">Avcı Bıçağı</a></li>
+            <li><a class="dropdown-item" href="#">Talon Bıçağı</a></li>
+            <li><a class="dropdown-item" href="#">Bayonet</a></li>
+            <li><a class="dropdown-item" href="#">M9 Bayonet</a></li>
+            <li><a class="dropdown-item" href="#">Pala bıçağı</a></li>
+            <li><a class="dropdown-item" href="#">Sustalı Bıçak</a></li>
+            <li><a class="dropdown-item" href="#"></a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">TÜFEKLER</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Awp</a></li>
+            <li><a class="dropdown-item" href="#">Ak-47</a></li>
+            <li><a class="dropdown-item" href="#">M4a4</a></li>
+            <li><a class="dropdown-item" href="#">M4a1-S</a></li>
+            <li><a class="dropdown-item" href="#">Galil</a></li>
+            <li><a class="dropdown-item" href="#">Famas</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">TABANCALAR</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Desert Eagle</a></li>
+            <li><a class="dropdown-item" href="#">Glock-18</a></li>
+            <li><a class="dropdown-item" href="#">Usp-S</a></li>
+            <li><a class="dropdown-item" href="#">P2000</a></li>
+            <li><a class="dropdown-item" href="#">Five Seven</a></li>
+            <li><a class="dropdown-item" href="#">Tec-9</a></li>
+          </ul>
+        </li>
+
+      </ul>
+      <div  class="d-flex">
+        <input autocomplete="off" [(ngModel)]="filterText"  id="aranacakUrun" class="form-control me-2" type="search" placeholder="Aradığınız ürünü yazın" aria-label="Search">
+        <button  (click)="search();filterText='';" class="btn btn-outline-success" type="submit">Ara</button>
+      </div>
+    </div>
+  </div>
+</nav>

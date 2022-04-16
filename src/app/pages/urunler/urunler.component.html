@@ -1,0 +1,29 @@
+<div class="row" style="margin-top: 7px">
+  <app-kategori class="col-3"></app-kategori>
+  <div class="col-9">
+    <h4>{{title}}</h4>
+    <div class="mb-3">
+      <input [(ngModel)]="filterText" class="form-control" aria-describedby="emailHelp"
+             placeholder="Aramak istediğiniz ürünü yazınız">
+    </div>
+
+
+    <div *ngIf="urunService.urunler.length !==0;else UrunBulunamadi " class="row m-0">
+      <div *ngFor="let urun of urunService.urunler | urunfilter:filterText" class="card m-1 col-2 col-sm-12"
+           style="width: 20rem;">
+        <div class="card-body">
+          <h4 class="card-title">{{urun.silahturu}} {{urun.isim}}</h4>
+          <p class="card-text">({{urun.gorunus}}) </p>
+          <img src="{{urun.imageUrl}}" style="height: 200px" class="card-img-top" alt="Resim bilgisi girilmedi">
+          <button (click)="deneme();" routerLink="/odemesayfasi" style="margin-left: 180px; margin-top: 10px" href="#" type="button"
+                  class="btn btn-outline-secondary">{{urun.fiyat | currency:"₺":false}}</button>
+        </div>
+      </div>
+    </div>
+    <ng-template #UrunBulunamadi>
+      <div class="alert alert-danger" role="alert">
+        Aradığınız Ürün Bulunamadı.
+      </div>
+    </ng-template>
+  </div>
+</div>

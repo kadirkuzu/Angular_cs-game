@@ -1,0 +1,44 @@
+<form style="width: 500px" autocomplete="off" [formGroup]="form" (ngSubmit)="urunEkle()">
+  <div class="alert alert-success" role="alert">
+    Bilgileri girdikten sonra ürün eklenecektir
+  </div>
+  <div class="mb-3">
+    <input formControlName="isim" placeholder="Ürün ismini giriniz" class="form-control" id="eklenecekurunısım">
+  </div>
+  <div class="mb-3">
+    <input formControlName="fiyat" placeholder="Fiyat giriniz" class="form-control" id="eklenecekurunfiyat">
+  </div>
+  <div class="mb-3">
+    <select formControlName="silahturu" id="eklenecekurunsilahturu" class="form-select" aria-label="Default select example">
+      <option selected>Silah türünü seçiniz</option>
+      <option value="Awp">Awp</option>
+      <option value="M4a4">M4a4</option>
+      <option value="M4a1-S">M4a1-S</option>
+      <option value="Desert Eagle">Desert Eagle</option>
+      <option value="M4a1-S">M4a1-S</option>
+      <option value="Usp-S">Usp-S</option>
+      <option value="Glock-18">Glock-18</option>
+      <option value="P2000">P2000</option>
+    </select>
+
+  </div>
+  <div class="mb-3">
+    <select formControlName="gorunus" class="form-select" id="eklenecekurungorunus" aria-label="Default select example" >
+      <option selected>Silah görünüşü seçiniz</option>
+      <option value="Fabrikadan Yeni Çıkmış">Fabrikadan Yeni Çıkmış</option>
+      <option value="Az Aşınmış">Az Aşınmış</option>
+      <option value="Görevde Kullanılmış">Görevde Kullanlmış</option>
+      <option value="Eskimiş">Eskimiş</option>
+      <option value="Savaş Görmüş">Savaş Görmüş</option>
+    </select>
+
+  </div>
+  <div class="mb-3">
+    <input formControlName="imageUrl" placeholder="Silah resmi için link giriniz" class="form-control"
+           id="eklenecekUrunResimUrl">
+  </div>
+  <div class="d-flex justify-content-end mt-3">
+    <button (click)="urunekleIptal()" routerLink="/urunler" type="button" class="btn btn-danger mt-auto me-2">İptal</button>
+    <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Ürünü ekle</button>
+  </div>
+</form>

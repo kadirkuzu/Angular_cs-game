@@ -1,0 +1,204 @@
+<body class="bg-light">
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+      <h2>ÖDEME EKRANI</h2>
+    </div>
+    <div class="row g-5">
+      <div class="col-md-5 col-lg-4 order-md-last">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-primary">Ödeme bilgisi</span>
+          <span class="badge bg-primary rounded-pill">3</span>
+        </h4>
+        <ul class="list-group mb-3">
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Ürünün adı</h6>
+              <small class="text-muted">Wildfire</small>
+            </div>
+            <span class="text-muted">₺700</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">İkinci ürün</h6>
+              <small class="text-muted">Empress</small>
+            </div>
+            <span class="text-muted">₺400</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Üçüncü ürün</h6>
+              <small class="text-muted">Kill Confirmed</small>
+            </div>
+            <span class="text-muted">$850</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between bg-light">
+            <div class="text-success">
+              <h6 class="my-0">Promosyon kodu</h6>
+              <small>31ERGL</small>
+            </div>
+            <span class="text-success">−₺31</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <span>Toplam</span>
+            <strong>₺1.919</strong>
+          </li>
+        </ul>
+
+        <form class="card p-2">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Promosyon kodu">
+            <button type="submit" class="btn btn-secondary">Gönder</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">Lütfen bilgileri doldurun</h4>
+        <form class="needs-validation" novalidate>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">Adınızı giriniz</label>
+              <input type="text" class="form-control" id="firstName" placeholder="Ad" value="" required>
+              <div class="invalid-feedback">
+                Geçerli bir ad gereklidir.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="lastName" class="form-label">Soyadınızı giriniz</label>
+              <input type="text" class="form-control" id="lastName" placeholder="Soyad" value="" required>
+              <div class="invalid-feedback">
+                Geçerli bir soyad gereklidir.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="username" class="form-label">Kullanıcı adını giriniz</label>
+              <div class="input-group has-validation">
+                <span class="input-group-text">@</span>
+                <input type="text" class="form-control" id="username" placeholder="Kullanıcı adı" required>
+                <div class="invalid-feedback">
+                  Kullanıcı adınız gerekli.
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="email" class="form-label">Email'inizi giriniz<span class="text-muted"></span></label>
+              <input type="email" class="form-control" id="email" placeholder="you@example.com">
+              <div class="invalid-feedback">
+                Lütfen geçerli bir e-posta giriniz
+              </div>
+            </div>
+
+            <div class="col-md-5">
+              <label for="country" class="form-label">Bulunduğunuz ülkeyi seçiniz</label>
+              <select class="form-select" id="country" required>
+                <option value="">Seç...</option>
+                <option>United States</option>
+                <option>Türkiye</option>
+              </select>
+              <div class="invalid-feedback">
+                Lütfen bir ülke seçin
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="state" class="form-label">Şehir seçiniz</label>
+              <select class="form-select" id="state" required>
+                <option value="">Seç...</option>
+                <option>Antalya</option>
+                <option>Siirt</option>
+                <option>Yozgat</option>
+                <option>Sakarya</option>
+              </select>
+              <div class="invalid-feedback">
+                Lütfen bir şehir seçin.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="zip" class="form-label">Posta Kodu</label>
+              <input type="text" class="form-control" id="zip" placeholder="" required>
+              <div class="invalid-feedback">
+                Posta kodu gerekli.
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="same-address">
+            <label class="form-check-label" for="same-address">Teslimat adresi fatura adresim ile aynı.</label>
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="save-info">
+            <label class="form-check-label" for="save-info">Tekrar kullanmak üzere bilgilerimi kaydet.</label>
+          </div>
+
+          <hr class="my-4">
+
+          <h4 class="mb-3">Ödeme şekli</h4>
+
+          <div class="my-3">
+            <div class="form-check">
+              <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+              <label class="form-check-label" for="credit">Kredi Kartı</label>
+            </div>
+            <div class="form-check">
+              <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+              <label class="form-check-label" for="debit">EFT/Havale</label>
+            </div>
+            <div class="form-check">
+              <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+              <label class="form-check-label" for="paypal">PayPal</label>
+            </div>
+          </div>
+
+          <div class="row gy-3">
+            <div class="col-md-6">
+              <label for="cc-name" class="form-label">Kartın üzerindeki isim</label>
+              <input type="text" class="form-control" id="cc-name" placeholder="" required>
+              <small class="text-muted">Kartın üzerindeki ismin aslını giriniz.</small>
+              <div class="invalid-feedback">
+                İsim bilgisi gereklidir.
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="cc-number" class="form-label">Kart numarası</label>
+              <input type="text" class="form-control" id="cc-number" placeholder="" required>
+              <div class="invalid-feedback">
+                Kart numarası gereklidir
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-expiration" class="form-label" style="width: 150px" >Son kullanma tarihi</label>
+              <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+              <div class="invalid-feedback">
+                Son kullanma tarihi gereklidir.
+              </div>
+            </div>
+
+            <div style="margin-left: 30px"  class="col-md-3">
+              <label for="cc-cvv" class="form-label">CVV</label>
+              <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+              <div class="invalid-feedback">
+                Güvenlik kodu gereklidir.
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Ödemeye devam et</button>
+          <br><br><br><br><br><br><br>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+</body>

@@ -1,9 +1,10 @@
-<body><div class="list-group">
+<div class="list-group">
   <h4 style="margin-left: 10px;">{{title}}</h4>
-  <a routerLink="/urunler" [class.active]="urunservis.aktifCategory==='TÜMÜ'" (click)="urunservis.kategorifilter('TÜMÜ')" href="#"
+  <a routerLink="/urunler" [class.active]="urunservis.aktifCategory==='TÜMÜ'"
+     (click)="urunservis.kategorifilter('TÜMÜ')" href="#"
      class="list-group-item " aria-current="true">TÜMÜ</a>
-  <a routerLink="/urunler/{{kategori.isim | lowercase}}" [class.active]="urunservis.aktifCategory===kategori.isim" (click)="urunservis.kategorifilter(kategori.isim)"
+  <a routerLink="/urunler/{{kategori.isim | lowercase}}" [class.active]="urunservis.aktifCategory===kategori.isim"
+     (click)="urunservis.kategorifilter(kategori.isim)"
      *ngFor="let kategori of kategoriler" href="#"
      class="list-group-item ">{{kategori.isim}}</a>
 </div>
-</body>

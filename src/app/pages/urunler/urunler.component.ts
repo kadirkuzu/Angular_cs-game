@@ -20,7 +20,7 @@ export class UrunlerComponent {
     private activatedRoute:ActivatedRoute ) {
   }
 
-  deneme(): void {
+  odemeYap(): void {
     let timerInterval: any
     Swal.fire({
       title: 'Satın alma sitesine yönlendiriyorum...',

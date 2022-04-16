@@ -9,14 +9,22 @@
 
 
     <div *ngIf="urunService.urunler.length !==0;else UrunBulunamadi " class="row m-0">
-      <div *ngFor="let urun of urunService.urunler | urunfilter:filterText" class="card m-1 col-2 col-sm-12"
+      <div *ngFor="let urun of urunService.urunler | urunfilter:filterText" class="card m-1 col-8 col-sm-12"
            style="width: 20rem;">
         <div class="card-body">
           <h4 class="card-title">{{urun.silahturu}} {{urun.isim}}</h4>
           <p class="card-text">({{urun.gorunus}}) </p>
           <img src="{{urun.imageUrl}}" style="height: 200px" class="card-img-top" alt="Resim bilgisi girilmedi">
-          <button (click)="deneme();" routerLink="/odemesayfasi" style="margin-left: 180px; margin-top: 10px" href="#" type="button"
+          <button (click)="odemeYap();" routerLink="/odemesayfasi" style="margin-left: 180px; margin-top: 10px" href="#" type="button"
                   class="btn btn-outline-secondary">{{urun.fiyat | currency:"₺":false}}</button>
+          <div style="margin-top: -655px;margin-left: 258px;" class="btn-group">
+            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
+            <ul class="dropdown-menu">
+              <li><button type="button" class="dropdown-item border-danger">Ürünü güncelle</button></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><button (click)="urunService.urunSilOnay(urun.id)" type="button" class="dropdown-item alert-danger">Ürünü sil</button></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

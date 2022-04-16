@@ -21,7 +21,7 @@ export class UrunEkleComponent implements OnInit {
 
   async urunEkle() {
     const urun=this.form.value
-    urun.fiyat=+urun.fiyat
+    urun.fiyat= +urun.fiyat
     await this.urunservis.urunekle(urun)
     this.form.reset({id: this.urunservis.createId(),gorunus:'Silah görünüşü seçiniz',silahturu:"Silah türünü seçiniz"});
   }

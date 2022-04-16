@@ -61,7 +61,7 @@ export class UrunservisService {
       timer: 1500
     })
   }
-  async urunSilOnay(urunId:number){
+  urunSilOnay(urunId:number){
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
         confirmButton: 'btn btn-success',

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import Swal from "sweetalert2";
 import {UrunservisService} from "./services/urunservis.service";
+import {AccountService} from "./services/account.service";
+
 
 @Component({
   selector: 'app-root',
@@ -11,13 +13,12 @@ export class AppComponent {
   title = 'AngularProject';
   loading = true
   filterText=""
-  giris=false
   search(){
     this.urunService.urunAra(this.filterText)
 
   }
 
-  constructor(public urunService: UrunservisService,) {
+  constructor(public urunService: UrunservisService,public accountService:AccountService) {
   }
 
   ngOnInit(): void {

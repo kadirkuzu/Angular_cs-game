@@ -86,7 +86,7 @@ export class UrunservisService {
         result.dismiss === Swal.DismissReason.cancel
       ) {
         swalWithBootstrapButtons.fire(
-          'Cancelled',
+          'İptal',
           'İşlem iptal edildi',
           'error'
         )

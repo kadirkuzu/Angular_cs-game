@@ -4,6 +4,7 @@ import {Urunler} from "./urunler";
 import {UrunservisService} from "../../services/urunservis.service";
 import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute} from "@angular/router";
+import {AccountService} from "../../services/account.service";
 
 @Component({
   selector: 'app-urunler',
@@ -17,7 +18,8 @@ export class UrunlerComponent {
 
   constructor(
     public urunService: UrunservisService,
-    private activatedRoute:ActivatedRoute ) {
+    private activatedRoute:ActivatedRoute ,
+    public accountService:AccountService) {
   }
 
   odemeYap(): void {

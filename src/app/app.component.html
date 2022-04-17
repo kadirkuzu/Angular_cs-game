@@ -4,8 +4,8 @@
     <a class="py-2 d-none d-md-inline-block" routerLink="anasayfa" style="text-decoration: auto; margin-left: -90px">Ana Sayfa</a>
     <a class="py-2 d-none d-md-inline-block" routerLink="urunler" (click)="urunService.kategorifilter('TÜMÜ');"style="text-decoration: auto">Ürünler</a>
     <a class="py-2 d-none d-md-inline-block" routerLink="urunekle" style="text-decoration: auto">Ürün ekle</a>
-    <a class="py-2 d-none d-md-inline-block nav-link dropdown-toggle"id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-       aria-expanded="false" style="text-decoration: auto">Kategoriler</a>
+    <button class="py-2 d-none d-md-inline-block nav-link dropdown-toggle btn link-button"id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+       aria-expanded="false" style="text-decoration: auto">Kategoriler</button>
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
       <li>
         <!--<li><a class="dropdown-item" href="#">BIÇAKLAR</a></li>
@@ -22,29 +22,30 @@
         <li><hr class="dropdown-divider"></li>
         <li><a class="dropdown-item" href="#">TÜFEKLER</a></li>
         <li><hr class="dropdown-divider"></li>-->
-      <li><a class="dropdown-item" routerLink="/urunler/awp" (click)="urunService.kategorifilter('Awp');urunService.aktifCategory='AWP'">Awp</a></li>
-      <li><a class="dropdown-item" routerLink="/urunler/ak-47"(click)="urunService.kategorifilter('Ak-47');urunService.aktifCategory='Ak-47'">Ak-47</a></li>
-      <li><a class="dropdown-item" routerLink="/urunler/m4a4"(click)="urunService.kategorifilter('m4a4');urunService.aktifCategory='m4a4'">M4a4</a></li>
-      <li><a class="dropdown-item" routerLink="/urunler/m4a1-s"(click)="urunService.kategorifilter('m4a1-s');urunService.aktifCategory='m4a1-s'">M4a1-S</a></li>
+      <li><a class="dropdown-item hovereffect" routerLink="/urunler/awp" (click)="urunService.kategorifilter('Awp');urunService.aktifCategory='AWP'">Awp</a></li>
+      <li><a class="dropdown-item hovereffect" routerLink="/urunler/ak-47"(click)="urunService.kategorifilter('Ak-47');urunService.aktifCategory='Ak-47'">Ak-47</a></li>
+      <li><a class="dropdown-item hovereffect" routerLink="/urunler/m4a4"(click)="urunService.kategorifilter('m4a4');urunService.aktifCategory='m4a4'">M4a4</a></li>
+      <li><a class="dropdown-item hovereffect" routerLink="/urunler/m4a1-s"(click)="urunService.kategorifilter('m4a1-s');urunService.aktifCategory='m4a1-s'">M4a1-S</a></li>
       <!--<li><a class="dropdown-item" routerLink="/urunler/Galil"(click)="urunService.kategorifilter('galil');urunService.aktifCategory='galil'">Galil</a></li>
       <li><a class="dropdown-item" routerLink="/urunler/Famas"(click)="urunService.kategorifilter('famas');urunService.aktifCategory='famas'">Famas</a></li>-->
       <!--<li><hr class="dropdown-divider"></li>
       <li><a class="dropdown-item" href="#">TABANCALAR</a></li>
       <li><hr class="dropdown-divider"></li>-->
-      <li><a class="dropdown-item" routerLink="/urunler/Desert-eagle"(click)="urunService.kategorifilter('Desert Eagle');urunService.aktifCategory='Desert Eagle'">Desert Eagle</a></li>
-      <li><a class="dropdown-item" routerLink="/urunler/glock-18"(click)="urunService.kategorifilter('Glock-18');urunService.aktifCategory='AWP'">Glock-18</a></li>
-      <li><a class="dropdown-item" routerLink="/urunler/usp-s"(click)="urunService.kategorifilter('Usp-s');urunService.aktifCategory='Usp-s'">Usp-S</a></li>
-      <li><a class="dropdown-item" routerLink="/urunler/p2000"(click)="urunService.kategorifilter('P2000');urunService.aktifCategory='P2000'">P2000</a></li>
+      <li><a class="dropdown-item hovereffect" routerLink="/urunler/Desert-eagle"(click)="urunService.kategorifilter('Desert Eagle');urunService.aktifCategory='Desert Eagle'">Desert Eagle</a></li>
+      <li><a class="dropdown-item hovereffect" routerLink="/urunler/glock-18"(click)="urunService.kategorifilter('Glock-18');urunService.aktifCategory='AWP'">Glock-18</a></li>
+      <li><a class="dropdown-item hovereffect" routerLink="/urunler/usp-s"(click)="urunService.kategorifilter('Usp-s');urunService.aktifCategory='Usp-s'">Usp-S</a></li>
+      <li><a class="dropdown-item hovereffect" routerLink="/urunler/p2000"(click)="urunService.kategorifilter('P2000');urunService.aktifCategory='P2000'">P2000</a></li>
       <!--<li><a class="dropdown-item" (click)="urunService.kategorifilter('Five seven');urunService.aktifCategory='Five seven'">Five Seven</a></li>
       <li><a class="dropdown-item" (click)="urunService.kategorifilter('Tec-9');urunService.aktifCategory='Tec-9'">Tec-9</a></li>-->
     </ul>
 
-    <a class="py-2 d-none d-md-inline-block nav-link dropdown-toggle" id="Users" role="button" data-bs-toggle="dropdown">Kullanıcı</a>
+    <button class="py-2 d-none d-md-inline-block nav-link dropdown-toggle btn link-button" id="Users" role="button" data-bs-toggle="dropdown">Kullanıcı</button>
     <ul class="dropdown-menu" aria-labelledby="Users">
       <li>
-      <li *ngIf="giris"><a class="dropdown-item" routerLink="user" >Sayfam</a></li>
-      <li *ngIf="!giris"><a class="dropdown-item hovereffect" routerLink="login" >Giriş yap</a></li>
-      <li *ngIf="!giris"><a class="dropdown-item hovereffect" routerLink="sign-up">Kaydol</a></li>
+      <li *ngIf="accountService.logedIn"><a class="dropdown-item hovereffect" routerLink="urunler" >Sayfam</a></li>
+      <li *ngIf="accountService.logedIn"><a class="dropdown-item hovereffect" routerLink="urunler" (click)="accountService.logOut()">Çıkış yap</a></li>
+      <li *ngIf="!accountService.logedIn"><a class="dropdown-item hovereffect" routerLink="login" >Giriş yap</a></li>
+      <li *ngIf="!accountService.logedIn"><a class="dropdown-item hovereffect" routerLink="sign-up">Kaydol</a></li>
 
     </ul>
 

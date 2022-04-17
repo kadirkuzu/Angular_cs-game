@@ -4,13 +4,13 @@
     <div class="modal-content rounded-5 shadow">
       <div class="modal-header p-5 pb-4 border-bottom-0">
         <h2 class="fw-bold mb-0">Kayıt Olun</h2>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" routerLink="/anasayfa" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
 
       <div class="modal-body p-5 pt-0">
-        <form class="">
+        <form autocomplete="off" class="">
           <div class="form-floating mb-3">
-            <input type="email" class="form-control rounded-4" id="yeniKullaniciGmail" placeholder="name@example.com">
+            <input type="email" class="form-control rounded-4" id="yeniKullaniciGmail" placeholder="name@example.com" autofocus>
             <label for="yeniKullaniciGmail">Lütfen gmail adresinizi girin</label>
           </div>
           <div class="form-floating mb-3">

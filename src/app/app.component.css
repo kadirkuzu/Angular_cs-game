@@ -34,6 +34,18 @@
   border-radius: 21px;
   transform: rotate(30deg);
 }
+.link-button{
+  color:#8e8e8e;
+  padding-top: 6px !important;
+  padding-bottom: 13px !important;
+
+}
+.link-button:hover{
+  color: white;
+}
+.link-button:focus{
+  box-shadow: none;
+}
 
 .product-device::before {
   position: absolute;

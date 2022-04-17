@@ -5,10 +5,6 @@
   font-weight:bold;
   background-color: black;
 }
-.dropdown-item:hover{
-  font-weight: bold;
-  background-color: black;
-}
 html,body{
   margin: 0;
   padding: 0;

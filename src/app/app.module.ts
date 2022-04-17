@@ -16,6 +16,8 @@ import { SatinAlimComponent } from './pages/satin-alim/satin-alim.component';
 import { UrunEkleComponent } from './pages/urun-ekle/urun-ekle.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import {AccountService} from "./services/account.service";
+import {LoginGuard} from "./pages/login/login.guard";
 
 @NgModule({
   declarations: [
@@ -39,7 +41,7 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
     HttpClientModule,
     DataTablesModule
   ],
-  providers: [UrunservisService],
+  providers: [UrunservisService,AccountService,LoginGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {

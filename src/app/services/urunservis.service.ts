@@ -50,7 +50,6 @@ export class UrunservisService {
 
   async urunekle(urun: Urunler): Promise<void>{
     const res = await this.http.post("http://localhost:3000/urunler",urun).toPromise()
-    console.log(res)
     if (!res) return
     await this.getProducts()
     Swal.fire({

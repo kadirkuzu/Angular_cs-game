@@ -8,29 +8,28 @@
       </div>
 
       <div class="modal-body p-5 pt-0">
-        <form autocomplete="off" class="">
+        <form autocomplete="off" [formGroup]="form">
           <div class="form-floating mb-3">
-            <input type="email" class="form-control rounded-4" id="yeniKullaniciGmail" placeholder="name@example.com" autofocus>
+            <input formControlName="emailAdress" type="email" class="form-control rounded-4" id="yeniKullaniciGmail" placeholder="name@example.com" pattern='[^ @]*@[^ @]*' autofocus>
             <label for="yeniKullaniciGmail">Lütfen gmail adresinizi girin</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="email" class="form-control rounded-4" id="yeniKullaniciAd" placeholder="kullanicinin adi">
+            <input formControlName="name" type="email" class="form-control rounded-4" id="yeniKullaniciAd" placeholder="kullanicinin adi">
             <label for="yeniKullaniciAd">Adınız</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="email" class="form-control rounded-4" id="yeniKullaniciSoyad" placeholder="kullanicinin soyadi">
+            <input formControlName="secondName" type="email" class="form-control rounded-4" id="yeniKullaniciSoyad" placeholder="kullanicinin soyadi">
             <label for="yeniKullaniciSoyad">Soyadınız</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="password" class="form-control rounded-4" id="yeniKullaniciKullaniciAdi"
-                   placeholder="kullanici adi">
+            <input formControlName="userName" class="form-control rounded-4" id="yeniKullaniciKullaniciAdi" placeholder="kullanici adi">
             <label for="yeniKullaniciKullaniciAdi">Kullanmak istediğiniz kullanıcı adı</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="password" class="form-control rounded-4" id="yeniKullaniciSifre" placeholder="Password">
+            <input formControlName="password" type="password" class="form-control rounded-4" id="yeniKullaniciSifre" placeholder="Password">
             <label for="yeniKullaniciSifre">Yeni şifre</label>
           </div>
-          <button class="w-100 mb-2 btn btn-lg rounded-4 btn-success" type="submit">Kayıt ol</button>
+          <button [disabled]="form.invalid" (click)="signUp()" class="w-100 mb-2 btn btn-lg rounded-4 btn-success" type="submit">Kayıt ol</button>
         </form>
       </div>
     </div>

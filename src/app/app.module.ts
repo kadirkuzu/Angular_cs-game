@@ -18,6 +18,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import {AccountService} from "./services/account.service";
 import {LoginGuard} from "./pages/login/login.guard";
+import { UserPageComponent } from './pages/user-page/user-page.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import {LoginGuard} from "./pages/login/login.guard";
     UrunEkleComponent,
     LoginComponent,
     SignUpComponent,
+    UserPageComponent,
   ],
   imports: [
     BrowserModule,

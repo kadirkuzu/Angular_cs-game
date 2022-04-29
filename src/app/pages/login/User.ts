@@ -1,17 +1,16 @@
 export class User{
-  //id:number
-  //emailAdress:string
+  id:number
+  emailAdress:string
   userName:string
-  password:string
-  //isim:string
-  //soyisim:string
-  constructor(id:number,emailAdress:string,userName:string,password:string,isim:string,soyisim:string) {
-    //this.id=id
-    //this.emailAdress=emailAdress
+  password:any
+  name:string
+  secondName:string
+  constructor(id:number,emailAdress:string,userName:string,password:any,name:string,secondName:string) {
+    this.id=id
+    this.emailAdress=emailAdress
     this.userName=userName
     this.password=password
-    //this.isim=isim
-    //this.soyisim=soyisim
-
+    this.name=name
+    this.secondName=secondName
   }
 }

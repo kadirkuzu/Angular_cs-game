@@ -42,21 +42,19 @@
     <button class="py-2 d-none d-md-inline-block nav-link dropdown-toggle btn link-button" id="Users" role="button" data-bs-toggle="dropdown">Kullanıcı</button>
     <ul class="dropdown-menu" aria-labelledby="Users">
       <li>
-      <li *ngIf="accountService.logedIn"><a class="dropdown-item hovereffect" routerLink="urunler" >Sayfam</a></li>
-      <li *ngIf="accountService.logedIn"><a class="dropdown-item hovereffect" routerLink="urunler" (click)="accountService.logOut()">Çıkış yap</a></li>
-      <li *ngIf="!accountService.logedIn"><a class="dropdown-item hovereffect" routerLink="login" >Giriş yap</a></li>
-      <li *ngIf="!accountService.logedIn"><a class="dropdown-item hovereffect" routerLink="sign-up">Kaydol</a></li>
+      <li *ngIf="girisVarmi()"><a class="dropdown-item hovereffect" routerLink="user-profile" >Sayfam</a></li>
+      <li *ngIf="girisVarmi()"><a class="dropdown-item hovereffect" routerLink="urunler" (click)="accountService.logOut()">Çıkış yap</a></li>
+      <li *ngIf="!girisVarmi()"><a class="dropdown-item hovereffect" routerLink="login"  >Giriş yap</a></li>
+      <li *ngIf="!girisVarmi()"><a class="dropdown-item hovereffect" routerLink="sign-up">Kaydol</a></li>
 
     </ul>
 
-    <a style="margin-right: -100px;text-decoration: auto" class="py-0 d-none d-md-inline-block end-0"><input style="height: 40px" autocomplete="off" [(ngModel)]="filterText"  id="aranacakUrun" class="form-control me-2" type="search" placeholder="Aradığınız ürünü yazın" aria-label="Search"></a>
-    <a style="margin-right: -280px;text-decoration: auto" class="py-0 d-none d-md-inline-block"><button  (click)="search();filterText='';" class="btn btn-outline-success"routerLink="urunler" type="submit">Ara</button></a>
+    <a style="margin-right: -100px;text-decoration: auto" class="py-0 d-none d-md-inline-block end-0"><input (keyup.enter)="search();filterText=''" style="height: 40px" autocomplete="off" [(ngModel)]="filterText"  id="aranacakUrun" class="form-control me-2" type="search" placeholder="Aradığınız ürünü yazın" aria-label="Search"></a>
+    <a style="margin-right: -280px;text-decoration: auto" class="py-0 d-none d-md-inline-block"><button  (click)="search();filterText='';" class="btn btn-outline-success" type="submit">Ara</button></a>
 
 
   </nav>
 </header>
-
-
 <router-outlet *ngIf="!loading"></router-outlet>
 
 

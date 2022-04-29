@@ -9,7 +9,7 @@ export class LoginGuard implements CanActivate {
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
 let logged = this.accountService.logedIn
-    if(logged) return true
+    if(logged || localStorage.getItem("isLogged")) return true
     this.router.navigate(["login"])
     return false
   }

@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import Swal from "sweetalert2";
 import {Urunler} from "./urunler";
 import {UrunservisService} from "../../services/urunservis.service";
-import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute} from "@angular/router";
 import {AccountService} from "../../services/account.service";
 

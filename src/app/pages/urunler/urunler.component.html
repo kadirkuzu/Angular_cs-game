@@ -17,7 +17,7 @@
           <img src="{{urun.imageUrl}}" style="height: 220px" class="card-img-top" alt="Resim bilgisi girilmedi">
           <button (click)="odemeYap();" routerLink="/odemesayfasi" style="margin-left: 180px; margin-top: 10px" href="#" type="button"
                   class="btn btn-outline-secondary">{{urun.fiyat | currency:"₺":false}}</button>
-          <div *ngIf="accountService.logedIn" style="margin-top: -710px;margin-left: 258px;" class="btn-group">
+          <div *ngIf="accountService.girisVarmi()" style="margin-top: -710px;margin-left: 258px;" class="btn-group">
             <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
             <ul class="dropdown-menu">
               <li><button type="button" class="dropdown-item">Ürünü güncelle</button></li>

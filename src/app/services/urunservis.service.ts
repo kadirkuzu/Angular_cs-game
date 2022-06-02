@@ -47,7 +47,18 @@ export class UrunservisService {
       aranacakUrunAdı.toLocaleLowerCase().includes(filterTEXT!))
     });
   }
-
+  fiyataGoreArtan(){
+    this.baseUrunler=this.baseUrunler.sort( (a:Urunler,b:Urunler) => (a.fiyat-b.fiyat))
+  }
+  fiyataGoreAzalan(){
+    this.baseUrunler=this.baseUrunler.sort( (a:Urunler,b:Urunler) => (b.fiyat-a.fiyat))
+  }
+  ismeGoreArtan(){
+    this.baseUrunler=this.baseUrunler.sort((a:Urunler,b:Urunler)=>(a.isim.localeCompare(b.isim)))
+  }
+  ismeGoreAzalan(){
+    this.baseUrunler=this.baseUrunler.reverse()
+  }
   async urunekle(urun: Urunler): Promise<void>{
     const res = await this.http.post("http://localhost:3000/urunler",urun).toPromise()
     if (!res) return

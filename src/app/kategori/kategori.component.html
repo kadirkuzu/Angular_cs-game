@@ -3,8 +3,22 @@
   <a routerLink="/urunler" [class.active]="urunservis.aktifCategory==='TÜMÜ'"
      (click)="urunservis.kategorifilter('TÜMÜ')" href="#"
      class="list-group-item " aria-current="true">TÜMÜ</a>
-  <a routerLink="/urunler/{{kategori.isim | lowercase}}" [class.active]="urunservis.aktifCategory.toLocaleLowerCase()===kategori.isim.toLocaleLowerCase()"
+  <a routerLink="/urunler/{{kategori.isim | lowercase}}"
+     [class.active]="urunservis.aktifCategory.toLocaleLowerCase()===kategori.isim.toLocaleLowerCase()"
      (click)="urunservis.kategorifilter(kategori.isim)"
      *ngFor="let kategori of kategoriler" href="#"
      class="list-group-item ">{{kategori.isim}}</a>
+</div>
+<br><br><br>
+
+<div style="width: 250px;margin-left: 38px;" class="btn-group">
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    Sırala
+  </button>
+  <ul class="dropdown-menu">
+    <li><button routerLink="/urunler" (click)="urunservis.fiyataGoreArtan();urunservis.kategorifilter(urunservis.aktifCategory)" class="dropdown-item">Fiyata göre: Artan</button></li>
+    <li><button routerLink="/urunler" (click)="urunservis.fiyataGoreAzalan();urunservis.kategorifilter(urunservis.aktifCategory)" class="dropdown-item">Fiyata göre: Azalan</button></li>
+    <li><button routerLink="/urunler" (click)="urunservis.ismeGoreArtan();urunservis.kategorifilter(urunservis.aktifCategory)" class="dropdown-item">İsme göre: A-Z</button></li>
+    <li><button routerLink="/urunler" (click)="urunservis.ismeGoreAzalan();urunservis.kategorifilter(urunservis.aktifCategory)" class="dropdown-item">İsme göre: Z-A</button></li>
+  </ul>
 </div>

@@ -54,9 +54,11 @@ export class UrunservisService {
     this.baseUrunler=this.baseUrunler.sort( (a:Urunler,b:Urunler) => (b.fiyat-a.fiyat))
   }
   ismeGoreArtan(){
-    this.baseUrunler=this.baseUrunler.sort((a:Urunler,b:Urunler)=>(a.isim.localeCompare(b.isim)))
+    if (this.aktifCategory=='TÜMÜ')return
+    this.baseUrunler=this.baseUrunler.sort((a:Urunler,b:Urunler)=>((a.isim).localeCompare(b.isim)))
   }
   ismeGoreAzalan(){
+    if (this.aktifCategory=='TÜMÜ')return
     this.baseUrunler=this.baseUrunler.reverse()
   }
   async urunekle(urun: Urunler): Promise<void>{

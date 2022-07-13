@@ -11,7 +11,7 @@ import {Router} from "@angular/router";
 })
 export class SignUpComponent implements OnInit {
 
-  constructor(public accountService:AccountService,private router:Router) { }
+  constructor(public accountService:AccountService,public router:Router) { }
   async ngOnInit():Promise<void> {
     const newId=await this.accountService.createId()
     this.form.patchValue({id:newId})
